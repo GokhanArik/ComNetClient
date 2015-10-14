@@ -11,12 +11,10 @@ public class Client {
     public static void main(String[] args) throws IOException, InterruptedException {
         ArrayList<MultiClientThread> clients = new ArrayList<>();
 
-        for (int i=0; i < 3; i++){
-            MultiClientThread client = new MultiClientThread(hostName, portNumber);
-            client.start();
-            clients.add(client);
-            Thread.sleep(4000);
-        }
+        MultiClientThread client = new MultiClientThread(hostName, portNumber);
+        
+        client.start();
+        clients.add(client);
     }
 }
 
